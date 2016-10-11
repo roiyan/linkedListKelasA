@@ -30,10 +30,29 @@ class LinkedList{
         this.tail = null;
     }
     public void push(Node newNode){ // 5 orang
-        // TODO: write the code, add newNode
+        if(head == null){
+                    head=newNode;
+                    tail=newNode;
+                }else {
+                    tail.next=newNode;
+                    tail=newNode;
+        }
     }
     public Node qpop(){ // 5 orang
-        // TODO: write the code, pop node (queue), return it
+if(head==null){
+                System.out.println("Linkedlist kosong");   
+            }else if(head==tail){
+                Node temp=head;
+                head = null;
+                tail = null;
+                return temp;
+            }else{
+                Node temp=head;
+                head=head.next;
+                head.prev=null;
+                temp.next=null;
+                return temp;
+            }
         return null;
     }
     public Node spop(){ // 5 orang
